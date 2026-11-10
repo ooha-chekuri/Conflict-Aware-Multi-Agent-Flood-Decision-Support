@@ -1,0 +1,85 @@
+[
+  {
+    "path": "/health",
+    "status": 200,
+    "content_type": "application/json"
+  },
+  {
+    "path": "/openapi.json",
+    "status": 200,
+    "content_type": "application/json"
+  },
+  {
+    "path": "/docs",
+    "status": 200,
+    "content_type": "text/html; charset=utf-8"
+  },
+  {
+    "path": "/synthetic/scenarios",
+    "status": 200,
+    "content_type": "application/json",
+    "record_count": 720
+  },
+  {
+    "path": "/historical/summary",
+    "status": 200,
+    "content_type": "application/json",
+    "historical_records": 152,
+    "guideline_passages": 139
+  },
+  {
+    "path": "POST /analyze MV-02",
+    "status": 200,
+    "agents": [
+      "weather",
+      "incident",
+      "guidelines"
+    ],
+    "conflicts": [
+      "direct_contradiction"
+    ],
+    "abstain": true
+  },
+  {
+    "path": "POST /analyze MV-06",
+    "status": 200,
+    "agents": [
+      "weather",
+      "incident",
+      "guidelines"
+    ],
+    "conflicts": [
+      "insufficient_evidence"
+    ],
+    "abstain": true
+  },
+  {
+    "path": "POST /analyze historical unknown forecast",
+    "status": 200,
+    "available_at": null,
+    "forecast_valid_at": "2022-07-16T21:00:00+05:30",
+    "availability": "unknown",
+    "eligible": false,
+    "abstain": true
+  },
+  {
+    "path": "GET dashboard root",
+    "status": 200,
+    "content_type": "text/html; charset=utf-8"
+  },
+  {
+    "path": "dashboard health",
+    "status": 200,
+    "body": "ok"
+  },
+  {
+    "path": "/redoc",
+    "status": 200,
+    "content_type": "text/html; charset=utf-8"
+  },
+  {
+    "path": "/docs/oauth2-redirect",
+    "status": 200,
+    "content_type": "text/html; charset=utf-8"
+  }
+]

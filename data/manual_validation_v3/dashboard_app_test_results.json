@@ -1,0 +1,50 @@
+[
+  {
+    "tab": "Scenario analysis",
+    "status": "pass",
+    "description": "Loaded v3 synthetic scenario selector and agent/decision JSON panels.",
+    "scenario_options": 54,
+    "scenario_prefix": "SYN3"
+  },
+  {
+    "interaction": "Select geographic mismatch SYN3-00004",
+    "recommendation": "Abstain and request human review",
+    "abstain": true,
+    "conflicts": [
+      "geographic_mismatch"
+    ],
+    "explanation_fields": [
+      "evidence_weights",
+      "limitations",
+      "support_aggregation"
+    ]
+  },
+  {
+    "interaction": "Select historical CWC bulletin and decision cutoff",
+    "selected_records": 12,
+    "unknown_availability": 12,
+    "ineligible": 12,
+    "abstain": true,
+    "availability_message": "Selected records: 21; records with established availability: 0. Unknown-availability records are retained for analysis and will be marked ineligible, so the decision can explicitly abstain."
+  },
+  {
+    "tab": "Evidence explorer",
+    "status": "pass",
+    "filter": "evacuation",
+    "matching_expanders": 26
+  },
+  {
+    "tab": "Historical case study",
+    "status": "pass",
+    "records": 152,
+    "guideline_passages": 139
+  },
+  {
+    "tab": "Evaluation",
+    "status": "pass",
+    "caption": "Active evaluation artifact: evaluation_results_v3.json",
+    "evaluation_version": "v3",
+    "test_scenarios": 160,
+    "coverage": 0.25
+  }
+]

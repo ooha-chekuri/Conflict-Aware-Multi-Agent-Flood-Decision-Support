@@ -1,0 +1,772 @@
+{
+  "cases": [
+    {
+      "case_id": "MV-01",
+      "expected_behaviour": "No contradiction; preserve both independent claims and request human verification.",
+      "actual_behaviour": {
+        "recommendation": "Escalate for human verification",
+        "abstain": false,
+        "conflicts": [],
+        "supporting_evidence": [
+          "MV-01-E1",
+          "MV-01-E2"
+        ],
+        "agent_claim_ids": {
+          "weather": [],
+          "incident": [
+            "MV-01-E1",
+            "MV-01-E2"
+          ],
+          "guidelines": [
+            "GUIDELINE-33-d323a0235c09",
+            "GUIDELINE-89-7a5ed6d98f07",
+            "GUIDELINE-33-3a9a6fe6dc19",
+            "GUIDELINE-34-93b2d5e65149",
+            "GUIDELINE-34-f29746606753"
+          ]
+        },
+        "guideline_result": "insufficient_evidence"
+      },
+      "evidence_ids": [
+        "MV-01-E1",
+        "MV-01-E2"
+      ],
+      "explanation": [
+        "Decision support only; a human responder retains authority.",
+        "Unknown publication availability, ambiguous timezones, stale observations, incomplete evidence, or uncertain geography cannot support a current decision.",
+        "Unverified report-class evidence is not eligible; synthetic evidence is for evaluation only.",
+        "Confidence is not empirically calibrated.",
+        "Guideline applicability was not established; any output is limited to referral for human verification and is not an operational instruction."
+      ],
+      "pass": true
+    },
+    {
+      "case_id": "MV-02",
+      "expected_behaviour": "Detect direct contradiction and abstain.",
+      "actual_behaviour": {
+        "recommendation": "Abstain and request human review",
+        "abstain": true,
+        "conflicts": [
+          {
+            "type": "direct_contradiction",
+            "severity": "high",
+            "evidence_ids": [
+              "MV-02-E1",
+              "MV-02-E2"
+            ]
+          }
+        ],
+        "supporting_evidence": [
+          "MV-02-E1",
+          "MV-02-E2"
+        ],
+        "agent_claim_ids": {
+          "weather": [],
+          "incident": [
+            "MV-02-E1",
+            "MV-02-E2"
+          ],
+          "guidelines": [
+            "GUIDELINE-33-d323a0235c09",
+            "GUIDELINE-60-a84a33c39766",
+            "GUIDELINE-89-7a5ed6d98f07",
+            "GUIDELINE-33-3a9a6fe6dc19",
+            "GUIDELINE-34-93b2d5e65149"
+          ]
+        },
+        "guideline_result": "insufficient_evidence"
+      },
+      "evidence_ids": [
+        "MV-02-E1",
+        "MV-02-E2"
+      ],
+      "explanation": [
+        "Decision support only; a human responder retains authority.",
+        "Unknown publication availability, ambiguous timezones, stale observations, incomplete evidence, or uncertain geography cannot support a current decision.",
+        "Unverified report-class evidence is not eligible; synthetic evidence is for evaluation only.",
+        "Confidence is not empirically calibrated.",
+        "Guideline applicability was not established; any output is limited to referral for human verification and is not an operational instruction."
+      ],
+      "pass": true
+    },
+    {
+      "case_id": "MV-03",
+      "expected_behaviour": "Flag stale record; exclude it from current support while retaining the recent update.",
+      "actual_behaviour": {
+        "recommendation": "Escalate for human verification",
+        "abstain": false,
+        "conflicts": [
+          {
+            "type": "temporal_staleness",
+            "severity": "medium",
+            "evidence_ids": [
+              "MV-03-E1"
+            ]
+          }
+        ],
+        "supporting_evidence": [
+          "MV-03-E2"
+        ],
+        "agent_claim_ids": {
+          "weather": [],
+          "incident": [
+            "MV-03-E1",
+            "MV-03-E2"
+          ],
+          "guidelines": [
+            "GUIDELINE-33-d323a0235c09",
+            "GUIDELINE-89-7a5ed6d98f07",
+            "GUIDELINE-33-3a9a6fe6dc19",
+            "GUIDELINE-34-93b2d5e65149",
+            "GUIDELINE-34-f29746606753"
+          ]
+        },
+        "guideline_result": "insufficient_evidence"
+      },
+      "evidence_ids": [
+        "MV-03-E1",
+        "MV-03-E2"
+      ],
+      "explanation": [
+        "Decision support only; a human responder retains authority.",
+        "Unknown publication availability, ambiguous timezones, stale observations, incomplete evidence, or uncertain geography cannot support a current decision.",
+        "Unverified report-class evidence is not eligible; synthetic evidence is for evaluation only.",
+        "Confidence is not empirically calibrated.",
+        "Guideline applicability was not established; any output is limited to referral for human verification and is not an operational instruction."
+      ],
+      "pass": true
+    },
+    {
+      "case_id": "MV-04",
+      "expected_behaviour": "Flag mismatch, do not treat as contradiction, and abstain for location review.",
+      "actual_behaviour": {
+        "recommendation": "Abstain and request human review",
+        "abstain": true,
+        "conflicts": [
+          {
+            "type": "geographic_mismatch",
+            "severity": "info",
+            "evidence_ids": [
+              "MV-04-E1",
+              "MV-04-E2"
+            ]
+          }
+        ],
+        "supporting_evidence": [
+          "MV-04-E1"
+        ],
+        "agent_claim_ids": {
+          "weather": [],
+          "incident": [
+            "MV-04-E1",
+            "MV-04-E2"
+          ],
+          "guidelines": [
+            "GUIDELINE-33-d323a0235c09",
+            "GUIDELINE-60-a84a33c39766",
+            "GUIDELINE-89-7a5ed6d98f07",
+            "GUIDELINE-91-b52244a1b94e",
+            "GUIDELINE-96-c5a9f33d103d"
+          ]
+        },
+        "guideline_result": "insufficient_evidence"
+      },
+      "evidence_ids": [
+        "MV-04-E1",
+        "MV-04-E2"
+      ],
+      "explanation": [
+        "Decision support only; a human responder retains authority.",
+        "Unknown publication availability, ambiguous timezones, stale observations, incomplete evidence, or uncertain geography cannot support a current decision.",
+        "Unverified report-class evidence is not eligible; synthetic evidence is for evaluation only.",
+        "Confidence is not empirically calibrated.",
+        "Guideline applicability was not established; any output is limited to referral for human verification and is not an operational instruction."
+      ],
+      "pass": true
+    },
+    {
+      "case_id": "MV-05",
+      "expected_behaviour": "Detect incompatible measurements and abstain pending verification.",
+      "actual_behaviour": {
+        "recommendation": "Abstain and request human review",
+        "abstain": true,
+        "conflicts": [
+          {
+            "type": "numerical_measurement",
+            "severity": "high",
+            "evidence_ids": [
+              "MV-05-E1",
+              "MV-05-E2"
+            ]
+          }
+        ],
+        "supporting_evidence": [
+          "MV-05-E1",
+          "MV-05-E2"
+        ],
+        "agent_claim_ids": {
+          "weather": [
+            "MV-05-E1",
+            "MV-05-E2"
+          ],
+          "incident": [],
+          "guidelines": [
+            "GUIDELINE-33-3a9a6fe6dc19",
+            "GUIDELINE-68-63105b431168",
+            "GUIDELINE-69-190be2393fbd",
+            "GUIDELINE-33-d323a0235c09",
+            "GUIDELINE-34-f29746606753"
+          ]
+        },
+        "guideline_result": "insufficient_evidence"
+      },
+      "evidence_ids": [
+        "MV-05-E1",
+        "MV-05-E2"
+      ],
+      "explanation": [
+        "Decision support only; a human responder retains authority.",
+        "Unknown publication availability, ambiguous timezones, stale observations, incomplete evidence, or uncertain geography cannot support a current decision.",
+        "Unverified report-class evidence is not eligible; synthetic evidence is for evaluation only.",
+        "Confidence is not empirically calibrated.",
+        "Guideline applicability was not established; any output is limited to referral for human verification and is not an operational instruction."
+      ],
+      "pass": true
+    },
+    {
+      "case_id": "MV-06",
+      "expected_behaviour": "Mark evidence insufficient and abstain.",
+      "actual_behaviour": {
+        "recommendation": "Abstain and request human review",
+        "abstain": true,
+        "conflicts": [
+          {
+            "type": "insufficient_evidence",
+            "severity": "medium",
+            "evidence_ids": [
+              "MV-06-E1"
+            ]
+          }
+        ],
+        "supporting_evidence": [],
+        "agent_claim_ids": {
+          "weather": [],
+          "incident": [
+            "MV-06-E1"
+          ],
+          "guidelines": [
+            "GUIDELINE-40-97e99a4c1612",
+            "GUIDELINE-49-894459524bdd",
+            "GUIDELINE-60-a84a33c39766",
+            "GUIDELINE-33-d323a0235c09",
+            "GUIDELINE-34-f37e726bb27e"
+          ]
+        },
+        "guideline_result": "insufficient_evidence"
+      },
+      "evidence_ids": [
+        "MV-06-E1"
+      ],
+      "explanation": [
+        "Decision support only; a human responder retains authority.",
+        "Unknown publication availability, ambiguous timezones, stale observations, incomplete evidence, or uncertain geography cannot support a current decision.",
+        "Unverified report-class evidence is not eligible; synthetic evidence is for evaluation only.",
+        "Confidence is not empirically calibrated.",
+        "Guideline applicability was not established; any output is limited to referral for human verification and is not an operational instruction."
+      ],
+      "pass": true
+    },
+    {
+      "case_id": "MV-07",
+      "expected_behaviour": "Assess the proposed action, cite the exact relevant provision, and retain human authority.",
+      "actual_behaviour": {
+        "recommendation": "Escalate for human verification",
+        "abstain": false,
+        "conflicts": [],
+        "supporting_evidence": [
+          "MV-07-E1"
+        ],
+        "agent_claim_ids": {
+          "weather": [],
+          "incident": [
+            "MV-07-E1"
+          ],
+          "guidelines": [
+            "GUIDELINE-89-7a5ed6d98f07",
+            "GUIDELINE-90-a561fdd6d813",
+            "GUIDELINE-53-2bf7035b6770",
+            "GUIDELINE-64-ccb52ca967ad",
+            "GUIDELINE-69-190be2393fbd"
+          ]
+        },
+        "guideline_result": "supported",
+        "assessment": {
+          "proposed_recommendation": "Prepare and validate emergency evacuation plans for all organisations involved in flood-affected community evacuation before impact.",
+          "result": "supported",
+          "assessment_abstained": false,
+          "human_review_required": false,
+          "classification_scope": "provision-to-action applicability assessment; not a legal/regulatory compliance determination",
+          "explanation": "The cited provision explicitly discusses preparing plans for organizations involved in emergency evacuation, and the evidence describes a flood situation. This is textual support for human consideration, not a compliance finding.",
+          "action_type": "evacuation_planning",
+          "assessment_basis": {
+            "action_type": "evacuation_planning",
+            "context_evidence_ids": [
+              "MV-07-E1"
+            ],
+            "conditions_checked": [
+              "flood context present in cited evidence"
+            ],
+            "scope_checked": [
+              "evacuation planning",
+              "emergency/community/organization scope"
+            ]
+          },
+          "relevant_provisions": [
+            {
+              "source": "ndma_guidelines_management_of_floods.pdf",
+              "physical_pdf_page": 89,
+              "printed_page": null,
+              "section": "8.1.3 Evacuation Plan",
+              "excerpt": "Evacuation of human population and livestock is the only prescribed means to save them from the fury of floods. Evacuation of flood affected communities can be one of the most difficult response operations, especially, when it involves large population. Evacuation needs to be carried out as a precautionary measure based on warning indicators, prior to impact, in order to protect flood-threatened persons from the full effects of the disasters. Evacuation may also be necessary after the area has been flooded in order to move persons from a flood-affected area to safer and better surroundings. For carrying out successful evacuation, the threat perception on the part of DM officials is essential. Continuous dialogue with stakeholders such as, early warning providers, transportation authorities, health-care authorities/ personnel, food and essential commodity suppliers, civil societies, NGOs and last but not the least, the communities including the Decision Support System (DSS) and inputs based on Geographical Information System (GIS) platform are essential for carrying out successful evacuation. Responsibilities of each organisation need to be fixed beforehand in the form of SOPs. Other important points that need to be considered for the development of evacuation plan including the action points, are listed below: i) Designing department-specific customised action plans to save lives immediately following or before an emergency as per the local scale flood risk profile of the region and to respond to any eventuality/emergency ii) Preparing plans of all the organisations involved in the emergency evacuation for all types of emergencies; validating plans; evaluating staff competency; testing the established emergency operational procedures"
+            }
+          ],
+          "retrieved_candidate_citations": [
+            {
+              "source": "ndma_guidelines_management_of_floods.pdf",
+              "physical_pdf_page": 89,
+              "printed_page": null,
+              "section": "8.1.3 Evacuation Plan",
+              "excerpt": "Evacuation of human population and livestock is the only prescribed means to save them from the fury of floods. Evacuation of flood affected communities can be one of the most difficult response operations, especially, when it involves large population. Evacuation needs to be carried out as a precautionary measure based on warning indicators, prior to impact, in order to protect flood-threatened persons from the full effects of the disasters. Evacuation may also be necessary after the area has been flooded in order to move persons from a flood-affected area to safer and better surroundings. For carrying out successful evacuation, the threat perception on the part of DM officials is essential. Continuous dialogue with stakeholders such as, early warning providers, transportation authorities, health-care authorities/ personnel, food and essential commodity suppliers, civil societies, NGOs and last but not the least, the communities including the Decision Support System (DSS) and inputs based on Geographical Information System (GIS) platform are essential for carrying out successful evacuation. Responsibilities of each organisation need to be fixed beforehand in the form of SOPs. Other important points that need to be considered for the development of evacuation plan including the action points, are listed below: i) Designing department-specific customised action plans to save lives immediately following or before an emergency as per the local scale flood risk profile of the region and to respond to any eventuality/emergency ii) Preparing plans of all the organisations involved in the emergency evacuation for all types of emergencies; validating plans; evaluating staff competency; testing the established emergency operational procedures"
+            },
+            {
+              "source": "ndma_guidelines_management_of_floods.pdf",
+              "physical_pdf_page": 90,
+              "printed_page": null,
+              "section": "8.2.2 Search and Rescue Teams",
+              "excerpt": "Community level teams will be developed in each district with basic training in search and rescue. Training modules will be developed for trainers of community level search and rescue teams by the NDRF training institutes. On the ground, besides others, the NDRF battalions will also assist the state government/district authorities in training communities. They will be further assisted by the ATIs, CD, Home Guards and NGOs. The state governments, through the ATIs, will develop procedures for formally recognising and certifying such trained search and rescue team members; they will also provide suitable indemnity to community level team members for their actions in the course of emergency response following a flood. Youth organisations such as the NCC, NSS and NYKS will provide support services to the response teams at the local level under the overall guidance and supervision of the local administration. 8.3 Emergency Relief Trained community level teams will assist in planning and setting up emergency shelters, distributing relief among the affected people, identifying missing people, and addressing the needs of education,"
+            },
+            {
+              "source": "ndma_guidelines_management_of_floods.pdf",
+              "physical_pdf_page": 53,
+              "printed_page": null,
+              "section": "2.3.9 Intra-state Multi-sectoral Coordination",
+              "excerpt": "While the state irrigation/water resources/flood control departments are responsible for planning, implementation and operation and maintenance of structural measures of FM in the state, civil authorities at the district/taluka/block/village level are responsible for search, rescue and relief. Further, the activities of one department, such as the construction of roads by the PWD, or railway lines by the Ministry of Railways (MOR), urbanisation/ industrialisation regulated by the ULBs and town and country planning organisations etc can affect the vulnerability of an area to floods and drainage congestion. The floods in the Krishna basin in 2005 are a case in point. It is therefore important that a mechanism is established for ensuring coordination among the various departments of state governments. In most of the flood prone states, State Flood Control Advisory Committees have been constituted with representatives of the various departments of the state governments and central organisations concerned, where the FM schemes proposed by the state irrigation/water resources/ flood control departments are considered and approved. There is no multi-disciplinary authority wherein the schemes of other departments for construction of irrigation works, roads, railway lines and development of residential, commercial and industrial estates etc., are considered with respect to their impact on the vulnerability of the areas to floods/drainage congestion and approved for implementation. Therefore, the state governments/SDMAs will establish appropriate multi-disciplinary mechanisms, whose clearance of the proposals of various departments with respect to the FM angle will be mandatory, before the works are sanctioned by them and taken up for implementation by the departments concerned. The mechanisms will be empowered to make recommendations for making the works flood"
+            },
+            {
+              "source": "ndma_guidelines_management_of_floods.pdf",
+              "physical_pdf_page": 64,
+              "printed_page": null,
+              "section": "3.5.2 Flood Proofing",
+              "excerpt": "Flood proofing measures help greatly in the mitigation of distress and provide immediate relief to the population in flood prone areas. It is essentially a combination of structural change and emergency action, not involving any evacuation. The techniques adopted consist of providing raised platforms for flood shelter for men and cattle, raising the public utility installation especially the platforms for drinking water hand pumps and bore wells above flood level, promoting construction of double-storey buildings wherein the first floor can be used for taking shelter during floods. The state governments/SDMAs will provide adequate number of raised platforms/flood shelters at suitable locations in the flood plains with basic amenities such as drinking water, sanitation, medical treatment, cooking, tents, lantern etc. for the people to take shelter during floods. In case of urban areas, certain measures that should be taken up as soon as flood warning is received, are installation of removable covers such as steel or aluminium bulk heads over doors and windows, permanent closure of low level windows and other openings, keeping store counters on wheels, closing of sewer wells, anchoring and covering machinery and equipment with plastic sheets, etc. In the existing developed areas, possibilities of protecting against submergence or relocating to safer areas vital installations like electricity sub-stations/ power houses, telephone exchanges, the pumping stations meant for drinking water supply etc., will be seriously examined and appropriate measures will be undertaken by the state governments/SDMAs, to make them safe against floods. The state governments/SDMAs will take steps to make all public utility installations flood safe."
+            },
+            {
+              "source": "ndma_guidelines_management_of_floods.pdf",
+              "physical_pdf_page": 69,
+              "printed_page": null,
+              "section": "4.2.3 Data Processing and Formulation of",
+              "excerpt": "Forecasts Historical data like gauge, discharge and rainfall are utilised for the development of techniques for formulation of forecasts on a real-time basis. Forecasts are formulated at the FF stations by predicting river stage/inflow with time of occurrence. After receipt of the hydrological and meteorological data from field formations, the data is processed in FF centers/control rooms to check its consistency and the data is modified, if any inaccuracy is found, before using in forecast formulation. All the forecasting centres of the CWC have been provided with computer facilities for data processing. The inflow forecasts are mainly formulated by using rainfall runoff correlation developed for the particular catchment. Computer-based watershed model MIKE-11, developed under CWC-DHI collaboration, is being used for inflow forecasts. Computers enable frequent updating of predictions based on the observed part of the flood hydrographs of FF and base stations during the flood period. The forecasts obtained from the coaxial correlation diagram or mathematical models/ computerised watershed models are modified, if required, to obtain the final forecast based on the prevailing conditions in the river and heavy rainfall warnings etc. In the CWC, the forecasts are formulated by a dedicated and experienced team of hydro-meteorologists and hydrologists. Forecasts (stage/inflow) are issued whenever the river stage at the FF site exceeds or is likely to exceed a specified level called warning level of the site which is fixed in consultation with the concerned state government. The warning level is generally 1 m below the danger level of the site, although there is no- common format designed for issuing flood forecasts by various field divisions, as forecasts are issued according to the users convenience. In the forecast, the current date and time of issue of forecast, present water level/inflow and anticipated water level/inflow with corresponding date and time are normally included."
+            }
+          ],
+          "guideline_citations": [
+            {
+              "source": "ndma_guidelines_management_of_floods.pdf",
+              "physical_pdf_page": 89,
+              "printed_page": null,
+              "section": "8.1.3 Evacuation Plan",
+              "excerpt": "Evacuation of human population and livestock is the only prescribed means to save them from the fury of floods. Evacuation of flood affected communities can be one of the most difficult response operations, especially, when it involves large population. Evacuation needs to be carried out as a precautionary measure based on warning indicators, prior to impact, in order to protect flood-threatened persons from the full effects of the disasters. Evacuation may also be necessary after the area has been flooded in order to move persons from a flood-affected area to safer and better surroundings. For carrying out successful evacuation, the threat perception on the part of DM officials is essential. Continuous dialogue with stakeholders such as, early warning providers, transportation authorities, health-care authorities/ personnel, food and essential commodity suppliers, civil societies, NGOs and last but not the least, the communities including the Decision Support System (DSS) and inputs based on Geographical Information System (GIS) platform are essential for carrying out successful evacuation. Responsibilities of each organisation need to be fixed beforehand in the form of SOPs. Other important points that need to be considered for the development of evacuation plan including the action points, are listed below: i) Designing department-specific customised action plans to save lives immediately following or before an emergency as per the local scale flood risk profile of the region and to respond to any eventuality/emergency ii) Preparing plans of all the organisations involved in the emergency evacuation for all types of emergencies; validating plans; evaluating staff competency; testing the established emergency operational procedures"
+            }
+          ],
+          "matched_candidate_sections": [
+            {
+              "source": "ndma_guidelines_management_of_floods.pdf",
+              "physical_pdf_page": 89,
+              "printed_page": null,
+              "section": "8.1.3 Evacuation Plan",
+              "excerpt": "Evacuation of human population and livestock is the only prescribed means to save them from the fury of floods. Evacuation of flood affected communities can be one of the most difficult response operations, especially, when it involves large population. Evacuation needs to be carried out as a precautionary measure based on warning indicators, prior to impact, in order to protect flood-threatened persons from the full effects of the disasters. Evacuation may also be necessary after the area has been flooded in order to move persons from a flood-affected area to safer and better surroundings. For carrying out successful evacuation, the threat perception on the part of DM officials is essential. Continuous dialogue with stakeholders such as, early warning providers, transportation authorities, health-care authorities/ personnel, food and essential commodity suppliers, civil societies, NGOs and last but not the least, the communities including the Decision Support System (DSS) and inputs based on Geographical Information System (GIS) platform are essential for carrying out successful evacuation. Responsibilities of each organisation need to be fixed beforehand in the form of SOPs. Other important points that need to be considered for the development of evacuation plan including the action points, are listed below: i) Designing department-specific customised action plans to save lives immediately following or before an emergency as per the local scale flood risk profile of the region and to respond to any eventuality/emergency ii) Preparing plans of all the organisations involved in the emergency evacuation for all types of emergencies; validating plans; evaluating staff competency; testing the established emergency operational procedures"
+            }
+          ],
+          "method": "lexical retrieval followed by explicit action-category, scope, condition, and evidence-context rules; unresolved cases abstain"
+        }
+      },
+      "evidence_ids": [
+        "MV-07-E1"
+      ],
+      "explanation": "The cited provision explicitly discusses preparing plans for organizations involved in emergency evacuation, and the evidence describes a flood situation. This is textual support for human consideration, not a compliance finding.",
+      "pass": true
+    },
+    {
+      "case_id": "MV-08",
+      "expected_behaviour": "Abstain from the guideline assessment and request human review when no provision/scope can be matched.",
+      "actual_behaviour": {
+        "recommendation": "Escalate for human verification",
+        "abstain": false,
+        "conflicts": [],
+        "supporting_evidence": [
+          "MV-08-E1"
+        ],
+        "agent_claim_ids": {
+          "weather": [],
+          "incident": [
+            "MV-08-E1"
+          ],
+          "guidelines": [
+            "GUIDELINE-33-3a9a6fe6dc19",
+            "GUIDELINE-37-a75f99cfb52c",
+            "GUIDELINE-60-a84a33c39766",
+            "GUIDELINE-96-c5a9f33d103d",
+            "GUIDELINE-33-d323a0235c09"
+          ]
+        },
+        "guideline_result": "insufficient_evidence",
+        "assessment": {
+          "proposed_recommendation": "Close the temporary access gate",
+          "result": "insufficient_evidence",
+          "assessment_abstained": true,
+          "human_review_required": true,
+          "classification_scope": "provision-to-action applicability assessment; not a legal/regulatory compliance determination",
+          "explanation": "The action, provision scope, or situation conditions cannot be matched from the supplied evidence; human review is required.",
+          "action_type": null,
+          "assessment_basis": {
+            "action_type": null,
+            "context_evidence_ids": [
+              "MV-08-E1"
+            ],
+            "conditions_checked": [],
+            "scope_checked": []
+          },
+          "relevant_provisions": [],
+          "retrieved_candidate_citations": [
+            {
+              "source": "ndma_guidelines_management_of_floods.pdf",
+              "physical_pdf_page": 33,
+              "printed_page": null,
+              "section": "1.1.1 Floods-A Natural Disaster",
+              "excerpt": "Floods have been recurrent phenomena in India from time immemorial. Almost every year floods of varying magnitude affect some parts of the country or the other. Different regions of the country have different climates and rainfall patterns and, therefore, while some parts face devastating floods, other parts may, at the same time, experience drought conditions. The monsoon regime is a regular phenomenon. Year-to-year variations occur with regard to the onset of the monsoon, its progress over the Indian landmass, and the amount of rainfall distribution. In some years the variation is quite significant. Nevertheless, there is a fundamental regularity and dependability about the monsoon that sets the seasonal rhythms of life, although it also causes unfortunate losses across much of this part of the world. The annual precipitation including snowfall over India is estimated at 4,00,000 crore cubic meters (4,000 Billion Cubic Meters [BCM]) with the seasonal rainfall in the monsoons being of the order of 3,00,000 crore cubic meters (3,000 BCM). The Indian subcontinent receives maximum rainfall during the south-west (SW) monsoon (summer monsoon) for a period of about 100 days, starting from the first week of June to the end September. Normal area-weighed rainfall over the Indian land mass is 89 cms during this period. Around 80 per cent of the annual total rainfall over India occurs in the SW monsoon season. The balance (20 per cent) rainfall is mainly due to convective activities Floods-Status and Context 1 in the pre-monsoon period (March-June) in the form of local storms/thunderstorms, cyclones and post-monsoon cyclones (October-mid December). Winter rains/snowfall over the northern part of India caused by western disturbances and the north- east (NE) monsoon in the state of Tamil Nadu and adjoining region also contribute to the total rainfall. The normal annual rainfall varies from less than 600 mms in the north-western part to over 2,500 mms in the north-eastern part. It varies from about 1,200 mms in the north to 2,900 mms in the south."
+            },
+            {
+              "source": "ndma_guidelines_management_of_floods.pdf",
+              "physical_pdf_page": 37,
+              "printed_page": null,
+              "section": "1.7 Drainage Congestion and Water-",
+              "excerpt": "logging An area is said to be waterlogged when the water table rises to an extent that the soil pores in the root zone of a crop become saturated, resulting in restriction of the normal circulation of air, decline in the level of oxygen and increase in the level of carbon dioxide. Drainage congestion and consequent water-logging may be either due to surface flooding or rise in water table, as a result of excess inflow as compared to outflow which may be either on account of excess rain and/ or over-irrigation. Various agencies/ committees/commissions have studied the problem and assessed the area liable to water-logging in the country. The Irrigation Commission (1972) estimated the total area liable to water-logging in the country as 48.4 lakh hectares. The National Commission on Agriculture (1976) estimated total waterlogged area as 60 lakh hectares. The Ministry of Agriculture (MOA) made a reassessment in 1984-85 and revised the estimate of the area suffering from drainage congestion and water logging as 85.3 lakh hectares. As per latest figures reported by the states, the total area prone to water logging/drainage congestion is 90 lakh hectares. State wise breakup is at Annex-I/IV. The MOWR along with the MOA and the state governments will, by the end of March 2008, make a scientific assessment of the area suffering from drainage congestion and water-logging."
+            },
+            {
+              "source": "ndma_guidelines_management_of_floods.pdf",
+              "physical_pdf_page": 60,
+              "printed_page": null,
+              "section": "3.2.5 Drainage Improvement",
+              "excerpt": "Surface water drainage congestion due to inadequacy of natural or manmade drainage channels results in flooding in many areas. In such cases constructing new channels and/or improving the capacity of existing channels constitute an effective means of flood control. However, the possibility of drainage congestion and flooding in the downstream area is to be kept in mind while formulating such schemes. The system of ‘dhars’ or ‘old channels’, efficiently serve the function of draining away the spillage and surface flows generated by local rains. The blocking of these natural drainage channels, which is normally done in the name of ‘reclamation for development’, may result in drainage congestion/ water- logging. The state governments/SDMAs will review the adequacy of existing sluices and drainage channels in areas suffering from drainage congestion. If the capacities of existing sluices in embankments and drainage channels are inadequate, they will be improved by increasing the vents and improving outfall conditions. State governments/SDMAs will prohibit the blocking of the natural drainage channels and sluices by an appropriate law and improve their capacity and construct new channels and sluices to ensure flow of excess rainwater in the area."
+            },
+            {
+              "source": "ndma_guidelines_management_of_floods.pdf",
+              "physical_pdf_page": 96,
+              "printed_page": null,
+              "section": "9.1.2 Plans of Central Ministries/Depart­",
+              "excerpt": "ments, State Governments and Other Agencies Implementation of these guidelines on FM will result in formulation of FMPs by the central ministries/departments, the state governments, the district authorities, the rural and urban local bodies and other stakeholders. The salient activities to be covered in the FMPs will include: • Identification of flood prone areas: village/ block/tehsil or taluka/district wise and delineation thereof on maps. • Preparation of flood vulnerability/flood risk/ flood hazard maps. • Putting in place DSS for FM including preparedness, rescue, relief, rehabilitation and recovery. • Developing reliable and country-wide FF and W systems in the public domain for all the flood prone areas with sufficient lead time and giving information on prevailing water levels, area inundated, expected water levels and area likely to be inundated with depth and duration of flooding in a manner easily understood by all. • Implementation of adequately designed, maintained and sustained structural measures for prevention of flooding and improvement of drainage, leading to feeling of security against floods and overall development in the flood prone areas. • Operation of reservoirs optimising benefits of flood moderation, irrigation, hydropower, drinking and industrial water supply. • Enactment and enforcement of laws for regulating developmental activities in flood plains and prevention of encroachments into flood plains and waterways, thereby reducing flood vulnerability/risk. • Making the existing and new buildings and infrastructure such as roads, railway lines, bridges, canals, etc. capable of withstanding the fury of the floods and not enhancing flood vulnerability/risk. • Preparation of states and districts FMPs. • Training of trainers in professional and technical institutions on FM issues. • Training of professionals like engineers and architects for incorporating measures that can sustain the structures and provide shelter to people during floods in flood prone areas."
+            },
+            {
+              "source": "ndma_guidelines_management_of_floods.pdf",
+              "physical_pdf_page": 33,
+              "printed_page": null,
+              "section": "1.1.2 Causes of Floods",
+              "excerpt": "Inadequate capacity of the rivers to contain within their banks the high flows brought down from the upper catchment areas following heavy rainfall, leads to flooding. The tendency to occupy the flood plains has been a serious concern over the years. Because of the varying rainfall distribution, many a time, areas which are not traditionally prone to floods also experience severe inundation. Areas with poor drainage facilities get flooded by accumulation of water from heavy rainfall. Excess irrigation water applied to command areas and increase in ground water levels due to seepage from canals and irrigated fields also are factors that accentuate the problem of water-logging. The problem is exacerbated by factors such as silting of the riverbeds, reduction in the carrying capacity of river channels, erosion of beds and banks leading to changes in river courses, obstructions to flow due to landslides, synchronisation of floods in the main and tributary rivers and retardation due to tidal effects."
+            }
+          ],
+          "guideline_citations": [],
+          "matched_candidate_sections": [],
+          "method": "lexical retrieval followed by explicit action-category, scope, condition, and evidence-context rules; unresolved cases abstain"
+        }
+      },
+      "evidence_ids": [
+        "MV-08-E1"
+      ],
+      "explanation": "The action, provision scope, or situation conditions cannot be matched from the supplied evidence; human review is required.",
+      "pass": true
+    },
+    {
+      "case_id": "MV-09",
+      "expected_behaviour": "Retrieve page 66 as a candidate but exclude it from community evacuation-plan support.",
+      "actual_behaviour": {
+        "proposed_recommendation": "Prepare and validate emergency evacuation plans for all organisations involved in flood-affected community evacuation before impact.",
+        "result": "insufficient_evidence",
+        "assessment_abstained": true,
+        "human_review_required": true,
+        "classification_scope": "provision-to-action applicability assessment; not a legal/regulatory compliance determination",
+        "explanation": "The action, provision scope, or situation conditions cannot be matched from the supplied evidence; human review is required.",
+        "action_type": "evacuation_planning",
+        "assessment_basis": {
+          "action_type": "evacuation_planning",
+          "context_evidence_ids": [
+            "MV-09-E1"
+          ],
+          "conditions_checked": [],
+          "scope_checked": []
+        },
+        "relevant_provisions": [],
+        "retrieved_candidate_citations": [
+          {
+            "source": "ndma_guidelines_management_of_floods.pdf",
+            "physical_pdf_page": 66,
+            "printed_page": null,
+            "section": "3.8.5 Patient Evacuation Plan",
+            "excerpt": "State governments/SDMAs will make available emergency medical equipment and drugs for resuscitation. Paramedical staff must be trained for resuscitation, triage and to maintain vital parameters like pulse, blood pressure, respiration and intravenous drip during evacuation. Heli- ambulances need to be deployed to aid in the evacuation of flood casualties collected at high points. The ambulances should have Standard Operating Procedures (SOPs) for treatment ."
+          }
+        ],
+        "guideline_citations": [],
+        "matched_candidate_sections": [],
+        "method": "lexical retrieval followed by explicit action-category, scope, condition, and evidence-context rules; unresolved cases abstain"
+      },
+      "evidence_ids": [
+        "MV-09-E1"
+      ],
+      "explanation": "The action, provision scope, or situation conditions cannot be matched from the supplied evidence; human review is required.",
+      "pass": true
+    },
+    {
+      "case_id": "MV-10",
+      "expected_behaviour": "Do not support an evacuation plan using unrelated flood-proofing text.",
+      "actual_behaviour": {
+        "proposed_recommendation": "Prepare and validate emergency evacuation plans for all organisations involved in flood-affected community evacuation before impact.",
+        "result": "insufficient_evidence",
+        "assessment_abstained": true,
+        "human_review_required": true,
+        "classification_scope": "provision-to-action applicability assessment; not a legal/regulatory compliance determination",
+        "explanation": "The action, provision scope, or situation conditions cannot be matched from the supplied evidence; human review is required.",
+        "action_type": "evacuation_planning",
+        "assessment_basis": {
+          "action_type": "evacuation_planning",
+          "context_evidence_ids": [
+            "MV-10-E1"
+          ],
+          "conditions_checked": [],
+          "scope_checked": []
+        },
+        "relevant_provisions": [],
+        "retrieved_candidate_citations": [
+          {
+            "source": "ndma_guidelines_management_of_floods.pdf",
+            "physical_pdf_page": 64,
+            "printed_page": null,
+            "section": "3.5.2 Flood Proofing",
+            "excerpt": "Flood proofing measures help greatly in the mitigation of distress and provide immediate relief to the population in flood prone areas. It is essentially a combination of structural change and emergency action, not involving any evacuation. The techniques adopted consist of providing raised platforms for flood shelter for men and cattle, raising the public utility installation especially the platforms for drinking water hand pumps and bore wells above flood level, promoting construction of double-storey buildings wherein the first floor can be used for taking shelter during floods. The state governments/SDMAs will provide adequate number of raised platforms/flood shelters at suitable locations in the flood plains with basic amenities such as drinking water, sanitation, medical treatment, cooking, tents, lantern etc. for the people to take shelter during floods. In case of urban areas, certain measures that should be taken up as soon as flood warning is received, are installation of removable covers such as steel or aluminium bulk heads over doors and windows, permanent closure of low level windows and other openings, keeping store counters on wheels, closing of sewer wells, anchoring and covering machinery and equipment with plastic sheets, etc. In the existing developed areas, possibilities of protecting against submergence or relocating to safer areas vital installations like electricity sub-stations/ power houses, telephone exchanges, the pumping stations meant for drinking water supply etc., will be seriously examined and appropriate measures will be undertaken by the state governments/SDMAs, to make them safe against floods. The state governments/SDMAs will take steps to make all public utility installations flood safe."
+          }
+        ],
+        "guideline_citations": [],
+        "matched_candidate_sections": [],
+        "method": "lexical retrieval followed by explicit action-category, scope, condition, and evidence-context rules; unresolved cases abstain"
+      },
+      "evidence_ids": [
+        "MV-10-E1"
+      ],
+      "explanation": "The action, provision scope, or situation conditions cannot be matched from the supplied evidence; human review is required.",
+      "pass": true
+    },
+    {
+      "case_id": "MV-11",
+      "expected_behaviour": "Abstain from assessment when action scope is incomplete.",
+      "actual_behaviour": {
+        "proposed_recommendation": "Prepare evacuation plans",
+        "result": "insufficient_evidence",
+        "assessment_abstained": true,
+        "human_review_required": true,
+        "classification_scope": "provision-to-action applicability assessment; not a legal/regulatory compliance determination",
+        "explanation": "A passage on evacuation planning was found, but the proposed action or evidence does not establish the provision's scope and flood conditions.",
+        "action_type": "evacuation_planning",
+        "assessment_basis": {
+          "action_type": "evacuation_planning",
+          "context_evidence_ids": [
+            "MV-11-E1"
+          ],
+          "conditions_checked": [
+            "flood context present in cited evidence"
+          ],
+          "scope_checked": [
+            "evacuation planning",
+            "emergency/community/organization scope"
+          ]
+        },
+        "relevant_provisions": [
+          {
+            "source": "ndma_guidelines_management_of_floods.pdf",
+            "physical_pdf_page": 89,
+            "printed_page": null,
+            "section": "8.1.3 Evacuation Plan",
+            "excerpt": "Evacuation of human population and livestock is the only prescribed means to save them from the fury of floods. Evacuation of flood affected communities can be one of the most difficult response operations, especially, when it involves large population. Evacuation needs to be carried out as a precautionary measure based on warning indicators, prior to impact, in order to protect flood-threatened persons from the full effects of the disasters. Evacuation may also be necessary after the area has been flooded in order to move persons from a flood-affected area to safer and better surroundings. For carrying out successful evacuation, the threat perception on the part of DM officials is essential. Continuous dialogue with stakeholders such as, early warning providers, transportation authorities, health-care authorities/ personnel, food and essential commodity suppliers, civil societies, NGOs and last but not the least, the communities including the Decision Support System (DSS) and inputs based on Geographical Information System (GIS) platform are essential for carrying out successful evacuation. Responsibilities of each organisation need to be fixed beforehand in the form of SOPs. Other important points that need to be considered for the development of evacuation plan including the action points, are listed below: i) Designing department-specific customised action plans to save lives immediately following or before an emergency as per the local scale flood risk profile of the region and to respond to any eventuality/emergency ii) Preparing plans of all the organisations involved in the emergency evacuation for all types of emergencies; validating plans; evaluating staff competency; testing the established emergency operational procedures"
+          }
+        ],
+        "retrieved_candidate_citations": [
+          {
+            "source": "ndma_guidelines_management_of_floods.pdf",
+            "physical_pdf_page": 89,
+            "printed_page": null,
+            "section": "8.1.3 Evacuation Plan",
+            "excerpt": "Evacuation of human population and livestock is the only prescribed means to save them from the fury of floods. Evacuation of flood affected communities can be one of the most difficult response operations, especially, when it involves large population. Evacuation needs to be carried out as a precautionary measure based on warning indicators, prior to impact, in order to protect flood-threatened persons from the full effects of the disasters. Evacuation may also be necessary after the area has been flooded in order to move persons from a flood-affected area to safer and better surroundings. For carrying out successful evacuation, the threat perception on the part of DM officials is essential. Continuous dialogue with stakeholders such as, early warning providers, transportation authorities, health-care authorities/ personnel, food and essential commodity suppliers, civil societies, NGOs and last but not the least, the communities including the Decision Support System (DSS) and inputs based on Geographical Information System (GIS) platform are essential for carrying out successful evacuation. Responsibilities of each organisation need to be fixed beforehand in the form of SOPs. Other important points that need to be considered for the development of evacuation plan including the action points, are listed below: i) Designing department-specific customised action plans to save lives immediately following or before an emergency as per the local scale flood risk profile of the region and to respond to any eventuality/emergency ii) Preparing plans of all the organisations involved in the emergency evacuation for all types of emergencies; validating plans; evaluating staff competency; testing the established emergency operational procedures"
+          }
+        ],
+        "guideline_citations": [
+          {
+            "source": "ndma_guidelines_management_of_floods.pdf",
+            "physical_pdf_page": 89,
+            "printed_page": null,
+            "section": "8.1.3 Evacuation Plan",
+            "excerpt": "Evacuation of human population and livestock is the only prescribed means to save them from the fury of floods. Evacuation of flood affected communities can be one of the most difficult response operations, especially, when it involves large population. Evacuation needs to be carried out as a precautionary measure based on warning indicators, prior to impact, in order to protect flood-threatened persons from the full effects of the disasters. Evacuation may also be necessary after the area has been flooded in order to move persons from a flood-affected area to safer and better surroundings. For carrying out successful evacuation, the threat perception on the part of DM officials is essential. Continuous dialogue with stakeholders such as, early warning providers, transportation authorities, health-care authorities/ personnel, food and essential commodity suppliers, civil societies, NGOs and last but not the least, the communities including the Decision Support System (DSS) and inputs based on Geographical Information System (GIS) platform are essential for carrying out successful evacuation. Responsibilities of each organisation need to be fixed beforehand in the form of SOPs. Other important points that need to be considered for the development of evacuation plan including the action points, are listed below: i) Designing department-specific customised action plans to save lives immediately following or before an emergency as per the local scale flood risk profile of the region and to respond to any eventuality/emergency ii) Preparing plans of all the organisations involved in the emergency evacuation for all types of emergencies; validating plans; evaluating staff competency; testing the established emergency operational procedures"
+          }
+        ],
+        "matched_candidate_sections": [
+          {
+            "source": "ndma_guidelines_management_of_floods.pdf",
+            "physical_pdf_page": 89,
+            "printed_page": null,
+            "section": "8.1.3 Evacuation Plan",
+            "excerpt": "Evacuation of human population and livestock is the only prescribed means to save them from the fury of floods. Evacuation of flood affected communities can be one of the most difficult response operations, especially, when it involves large population. Evacuation needs to be carried out as a precautionary measure based on warning indicators, prior to impact, in order to protect flood-threatened persons from the full effects of the disasters. Evacuation may also be necessary after the area has been flooded in order to move persons from a flood-affected area to safer and better surroundings. For carrying out successful evacuation, the threat perception on the part of DM officials is essential. Continuous dialogue with stakeholders such as, early warning providers, transportation authorities, health-care authorities/ personnel, food and essential commodity suppliers, civil societies, NGOs and last but not the least, the communities including the Decision Support System (DSS) and inputs based on Geographical Information System (GIS) platform are essential for carrying out successful evacuation. Responsibilities of each organisation need to be fixed beforehand in the form of SOPs. Other important points that need to be considered for the development of evacuation plan including the action points, are listed below: i) Designing department-specific customised action plans to save lives immediately following or before an emergency as per the local scale flood risk profile of the region and to respond to any eventuality/emergency ii) Preparing plans of all the organisations involved in the emergency evacuation for all types of emergencies; validating plans; evaluating staff competency; testing the established emergency operational procedures"
+          }
+        ],
+        "method": "lexical retrieval followed by explicit action-category, scope, condition, and evidence-context rules; unresolved cases abstain"
+      },
+      "evidence_ids": [
+        "MV-11-E1"
+      ],
+      "explanation": "A passage on evacuation planning was found, but the proposed action or evidence does not establish the provision's scope and flood conditions.",
+      "pass": true
+    },
+    {
+      "case_id": "MV-12",
+      "expected_behaviour": "Classify flood guideline as not applicable.",
+      "actual_behaviour": {
+        "proposed_recommendation": "Prepare and validate emergency evacuation plans for all organisations involved in flood-affected community evacuation before impact.",
+        "result": "not_applicable",
+        "assessment_abstained": false,
+        "human_review_required": true,
+        "classification_scope": "provision-to-action applicability assessment; not a legal/regulatory compliance determination",
+        "explanation": "The supplied evidence does not describe a flood-related situation; flood-guideline applicability cannot be established for this case.",
+        "action_type": "evacuation_planning",
+        "assessment_basis": {
+          "action_type": "evacuation_planning",
+          "context_evidence_ids": [
+            "MV-12-E1"
+          ],
+          "conditions_checked": [],
+          "scope_checked": []
+        },
+        "relevant_provisions": [
+          {
+            "source": "ndma_guidelines_management_of_floods.pdf",
+            "physical_pdf_page": 89,
+            "printed_page": null,
+            "section": "8.1.3 Evacuation Plan",
+            "excerpt": "Evacuation of human population and livestock is the only prescribed means to save them from the fury of floods. Evacuation of flood affected communities can be one of the most difficult response operations, especially, when it involves large population. Evacuation needs to be carried out as a precautionary measure based on warning indicators, prior to impact, in order to protect flood-threatened persons from the full effects of the disasters. Evacuation may also be necessary after the area has been flooded in order to move persons from a flood-affected area to safer and better surroundings. For carrying out successful evacuation, the threat perception on the part of DM officials is essential. Continuous dialogue with stakeholders such as, early warning providers, transportation authorities, health-care authorities/ personnel, food and essential commodity suppliers, civil societies, NGOs and last but not the least, the communities including the Decision Support System (DSS) and inputs based on Geographical Information System (GIS) platform are essential for carrying out successful evacuation. Responsibilities of each organisation need to be fixed beforehand in the form of SOPs. Other important points that need to be considered for the development of evacuation plan including the action points, are listed below: i) Designing department-specific customised action plans to save lives immediately following or before an emergency as per the local scale flood risk profile of the region and to respond to any eventuality/emergency ii) Preparing plans of all the organisations involved in the emergency evacuation for all types of emergencies; validating plans; evaluating staff competency; testing the established emergency operational procedures"
+          }
+        ],
+        "retrieved_candidate_citations": [
+          {
+            "source": "ndma_guidelines_management_of_floods.pdf",
+            "physical_pdf_page": 89,
+            "printed_page": null,
+            "section": "8.1.3 Evacuation Plan",
+            "excerpt": "Evacuation of human population and livestock is the only prescribed means to save them from the fury of floods. Evacuation of flood affected communities can be one of the most difficult response operations, especially, when it involves large population. Evacuation needs to be carried out as a precautionary measure based on warning indicators, prior to impact, in order to protect flood-threatened persons from the full effects of the disasters. Evacuation may also be necessary after the area has been flooded in order to move persons from a flood-affected area to safer and better surroundings. For carrying out successful evacuation, the threat perception on the part of DM officials is essential. Continuous dialogue with stakeholders such as, early warning providers, transportation authorities, health-care authorities/ personnel, food and essential commodity suppliers, civil societies, NGOs and last but not the least, the communities including the Decision Support System (DSS) and inputs based on Geographical Information System (GIS) platform are essential for carrying out successful evacuation. Responsibilities of each organisation need to be fixed beforehand in the form of SOPs. Other important points that need to be considered for the development of evacuation plan including the action points, are listed below: i) Designing department-specific customised action plans to save lives immediately following or before an emergency as per the local scale flood risk profile of the region and to respond to any eventuality/emergency ii) Preparing plans of all the organisations involved in the emergency evacuation for all types of emergencies; validating plans; evaluating staff competency; testing the established emergency operational procedures"
+          }
+        ],
+        "guideline_citations": [
+          {
+            "source": "ndma_guidelines_management_of_floods.pdf",
+            "physical_pdf_page": 89,
+            "printed_page": null,
+            "section": "8.1.3 Evacuation Plan",
+            "excerpt": "Evacuation of human population and livestock is the only prescribed means to save them from the fury of floods. Evacuation of flood affected communities can be one of the most difficult response operations, especially, when it involves large population. Evacuation needs to be carried out as a precautionary measure based on warning indicators, prior to impact, in order to protect flood-threatened persons from the full effects of the disasters. Evacuation may also be necessary after the area has been flooded in order to move persons from a flood-affected area to safer and better surroundings. For carrying out successful evacuation, the threat perception on the part of DM officials is essential. Continuous dialogue with stakeholders such as, early warning providers, transportation authorities, health-care authorities/ personnel, food and essential commodity suppliers, civil societies, NGOs and last but not the least, the communities including the Decision Support System (DSS) and inputs based on Geographical Information System (GIS) platform are essential for carrying out successful evacuation. Responsibilities of each organisation need to be fixed beforehand in the form of SOPs. Other important points that need to be considered for the development of evacuation plan including the action points, are listed below: i) Designing department-specific customised action plans to save lives immediately following or before an emergency as per the local scale flood risk profile of the region and to respond to any eventuality/emergency ii) Preparing plans of all the organisations involved in the emergency evacuation for all types of emergencies; validating plans; evaluating staff competency; testing the established emergency operational procedures"
+          }
+        ],
+        "matched_candidate_sections": [
+          {
+            "source": "ndma_guidelines_management_of_floods.pdf",
+            "physical_pdf_page": 89,
+            "printed_page": null,
+            "section": "8.1.3 Evacuation Plan",
+            "excerpt": "Evacuation of human population and livestock is the only prescribed means to save them from the fury of floods. Evacuation of flood affected communities can be one of the most difficult response operations, especially, when it involves large population. Evacuation needs to be carried out as a precautionary measure based on warning indicators, prior to impact, in order to protect flood-threatened persons from the full effects of the disasters. Evacuation may also be necessary after the area has been flooded in order to move persons from a flood-affected area to safer and better surroundings. For carrying out successful evacuation, the threat perception on the part of DM officials is essential. Continuous dialogue with stakeholders such as, early warning providers, transportation authorities, health-care authorities/ personnel, food and essential commodity suppliers, civil societies, NGOs and last but not the least, the communities including the Decision Support System (DSS) and inputs based on Geographical Information System (GIS) platform are essential for carrying out successful evacuation. Responsibilities of each organisation need to be fixed beforehand in the form of SOPs. Other important points that need to be considered for the development of evacuation plan including the action points, are listed below: i) Designing department-specific customised action plans to save lives immediately following or before an emergency as per the local scale flood risk profile of the region and to respond to any eventuality/emergency ii) Preparing plans of all the organisations involved in the emergency evacuation for all types of emergencies; validating plans; evaluating staff competency; testing the established emergency operational procedures"
+          }
+        ],
+        "method": "lexical retrieval followed by explicit action-category, scope, condition, and evidence-context rules; unresolved cases abstain"
+      },
+      "evidence_ids": [
+        "MV-12-E1"
+      ],
+      "explanation": "The supplied evidence does not describe a flood-related situation; flood-guideline applicability cannot be established for this case.",
+      "pass": true
+    },
+    {
+      "case_id": "MV-13",
+      "expected_behaviour": "Classify contradicted only when a relevant passage explicitly prohibits the proposed action.",
+      "actual_behaviour": {
+        "proposed_recommendation": "Begin evacuation before official warning indicators are recorded",
+        "result": "contradicted",
+        "assessment_abstained": false,
+        "human_review_required": true,
+        "classification_scope": "provision-to-action applicability assessment; not a legal/regulatory compliance determination",
+        "explanation": "A relevant provision explicitly prohibits the proposed action under the stated condition. Human review is required before any response.",
+        "action_type": "community_evacuation",
+        "assessment_basis": {
+          "action_type": "community_evacuation",
+          "context_evidence_ids": [
+            "MV-13-E1"
+          ],
+          "conditions_checked": [
+            "explicit provision prohibition compared with proposed action"
+          ],
+          "scope_checked": []
+        },
+        "relevant_provisions": [
+          {
+            "source": "synthetic_guideline_test_fixture",
+            "physical_pdf_page": 1,
+            "printed_page": null,
+            "section": "test-only prohibition",
+            "excerpt": "Evacuation of flood-affected communities shall not begin before official warning indicators are recorded."
+          }
+        ],
+        "retrieved_candidate_citations": [
+          {
+            "source": "synthetic_guideline_test_fixture",
+            "physical_pdf_page": 1,
+            "printed_page": null,
+            "section": "test-only prohibition",
+            "excerpt": "Evacuation of flood-affected communities shall not begin before official warning indicators are recorded."
+          }
+        ],
+        "guideline_citations": [
+          {
+            "source": "synthetic_guideline_test_fixture",
+            "physical_pdf_page": 1,
+            "printed_page": null,
+            "section": "test-only prohibition",
+            "excerpt": "Evacuation of flood-affected communities shall not begin before official warning indicators are recorded."
+          }
+        ],
+        "matched_candidate_sections": [
+          {
+            "source": "synthetic_guideline_test_fixture",
+            "physical_pdf_page": 1,
+            "printed_page": null,
+            "section": "test-only prohibition",
+            "excerpt": "Evacuation of flood-affected communities shall not begin before official warning indicators are recorded."
+          }
+        ],
+        "method": "lexical retrieval followed by explicit action-category, scope, condition, and evidence-context rules; unresolved cases abstain"
+      },
+      "evidence_ids": [
+        "MV-13-E1"
+      ],
+      "explanation": "A relevant provision explicitly prohibits the proposed action under the stated condition. Human review is required before any response.",
+      "pass": true
+    }
+  ],
+  "counts": {
+    "total": 13,
+    "passed": 13,
+    "failed": 0
+  },
+  "limitations": [
+    "Incident evidence is fictional.",
+    "MV-09 and MV-10 isolate authentic extracted NDMA passages to test relevance after retrieval.",
+    "MV-13 uses a synthetic test-only prohibition; it is not attributed to NDMA.",
+    "Only MV-07 is an end-to-end proposed-action assessment against the actual guideline corpus."
+  ]
+}

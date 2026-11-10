@@ -1,0 +1,24 @@
+{
+  "description": "Starting assumptions for prototype weighting, not empirically validated reliability estimates. Official operational sources receive a larger prior than unverified reports; all sources remain fallible and conflicts are surfaced explicitly.",
+  "weights": {
+    "government_official": 0.85,
+    "official_telemetry": 0.8,
+    "official_guideline": 0.9,
+    "field_verified": 0.75,
+    "unverified_report": 0.45,
+    "synthetic": 0.5,
+    "unknown": 0.4
+  },
+  "decision": {
+    "minimum_evidence_weight": 0.25,
+    "minimum_recommendation_support": 0.45,
+    "independent_corroboration_bonus": 0.1,
+    "minimum_completeness": 0.5,
+    "stale_after_hours": 12,
+    "numeric_time_tolerance_hours": 1,
+    "unverified_sources_require_human_review": true,
+    "unknown_availability_requires_abstention": true,
+    "uncertain_geography_requires_abstention": true,
+    "assumptions": "Initial prototype thresholds, not empirically calibrated or field validated. Low-completeness items below 0.5 are unusable; source reliability weights are documented priors. Recommendation support requires distinct source contribution >= 0.45; repeated claims from one source contribute only its maximum weight. An explicit independent-source marker adds 0.10 per additional independent source, capped at 0.30. Any missing publication availability or unverified unverified_report requires human review; only evidence available by the decision time may support a current recommendation. Forecasts must include the decision time in their validity period."
+  }
+}

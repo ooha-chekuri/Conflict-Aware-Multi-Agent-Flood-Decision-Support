@@ -1,0 +1,151 @@
+{
+  "dataset": "data/synthetic/evidence_v2.jsonl",
+  "labels": "data/evaluation/labels/synthetic_gold_v2.jsonl",
+  "test_families": [
+    "agreement",
+    "geo_mismatch",
+    "road_status_conflict",
+    "insufficient"
+  ],
+  "test_scenarios": 160,
+  "coverage": 0.21875,
+  "abstention_rate": 0.78125,
+  "families": {
+    "agreement": {
+      "abstained": 5,
+      "non_abstained": 35,
+      "reasons": {
+        "support_below_threshold_after_same_source_deduplication": 5
+      }
+    },
+    "geo_mismatch": {
+      "abstained": 40,
+      "non_abstained": 0,
+      "reasons": {
+        "geographic_mismatch": 40
+      }
+    },
+    "road_status_conflict": {
+      "abstained": 40,
+      "non_abstained": 0,
+      "reasons": {
+        "high_severity_status_conflict": 40
+      }
+    },
+    "insufficient": {
+      "abstained": 40,
+      "non_abstained": 0,
+      "reasons": {
+        "insufficient_evidence": 40
+      }
+    }
+  },
+  "gold_positive_agreement_abstentions": [
+    {
+      "scenario_id": "SYN2-00036",
+      "source_names": [
+        "Field Unit",
+        "Field Unit"
+      ],
+      "independent_markers": [
+        false,
+        true
+      ],
+      "support": {
+        "distinct_source_weight": 0.35,
+        "independent_source_count": 1,
+        "corroboration_bonus": 0.0,
+        "minimum_support": 0.45,
+        "passes_threshold": false,
+        "duplicate_rule": "multiple claims from one source name contribute only that source's maximum weight"
+      },
+      "label_expected": "escalate_for_human_verification",
+      "abstained": true
+    },
+    {
+      "scenario_id": "SYN2-00180",
+      "source_names": [
+        "Gauge Network",
+        "Gauge Network"
+      ],
+      "independent_markers": [
+        false,
+        true
+      ],
+      "support": {
+        "distinct_source_weight": 0.35,
+        "independent_source_count": 1,
+        "corroboration_bonus": 0.0,
+        "minimum_support": 0.45,
+        "passes_threshold": false,
+        "duplicate_rule": "multiple claims from one source name contribute only that source's maximum weight"
+      },
+      "label_expected": "escalate_for_human_verification",
+      "abstained": true
+    },
+    {
+      "scenario_id": "SYN2-00234",
+      "source_names": [
+        "Local Control Room",
+        "Local Control Room"
+      ],
+      "independent_markers": [
+        false,
+        true
+      ],
+      "support": {
+        "distinct_source_weight": 0.35,
+        "independent_source_count": 1,
+        "corroboration_bonus": 0.0,
+        "minimum_support": 0.45,
+        "passes_threshold": false,
+        "duplicate_rule": "multiple claims from one source name contribute only that source's maximum weight"
+      },
+      "label_expected": "escalate_for_human_verification",
+      "abstained": true
+    },
+    {
+      "scenario_id": "SYN2-00270",
+      "source_names": [
+        "Local Control Room",
+        "Local Control Room"
+      ],
+      "independent_markers": [
+        false,
+        true
+      ],
+      "support": {
+        "distinct_source_weight": 0.35,
+        "independent_source_count": 1,
+        "corroboration_bonus": 0.0,
+        "minimum_support": 0.45,
+        "passes_threshold": false,
+        "duplicate_rule": "multiple claims from one source name contribute only that source's maximum weight"
+      },
+      "label_expected": "escalate_for_human_verification",
+      "abstained": true
+    },
+    {
+      "scenario_id": "SYN2-00279",
+      "source_names": [
+        "Gauge Network",
+        "Gauge Network"
+      ],
+      "independent_markers": [
+        false,
+        true
+      ],
+      "support": {
+        "distinct_source_weight": 0.35,
+        "independent_source_count": 1,
+        "corroboration_bonus": 0.0,
+        "minimum_support": 0.45,
+        "passes_threshold": false,
+        "duplicate_rule": "multiple claims from one source name contribute only that source's maximum weight"
+      },
+      "label_expected": "escalate_for_human_verification",
+      "abstained": true
+    }
+  ],
+  "interpretation": "The five agreement cases are positive gold outcomes but the actual source_name values repeat within each pair. The engine does not treat repeated same-source claims as independent corroboration. This is a generator/label inconsistency; based on observed inputs they are not established independent sources. Do not change threshold or gold labels on this finding."
+}

@@ -1,0 +1,95 @@
+{
+  "endpoints": {
+    "/health": {
+      "status": 200,
+      "record_count": null,
+      "summary_keys": null
+    },
+    "/openapi.json": {
+      "status": 200,
+      "record_count": null,
+      "summary_keys": null
+    },
+    "/docs": {
+      "status": 200,
+      "record_count": null,
+      "summary_keys": null
+    },
+    "/redoc": {
+      "status": 200,
+      "record_count": null,
+      "summary_keys": null
+    },
+    "/docs/oauth2-redirect": {
+      "status": 200,
+      "record_count": null,
+      "summary_keys": null
+    },
+    "/synthetic/scenarios": {
+      "status": 200,
+      "record_count": 720,
+      "summary_keys": null
+    },
+    "/historical/summary": {
+      "status": 200,
+      "record_count": null,
+      "summary_keys": [
+        "created_at_utc",
+        "csv",
+        "guideline_passages",
+        "historical_evidence_records",
+        "inputs",
+        "issues",
+        "pdf_pages"
+      ]
+    }
+  },
+  "analysis": {
+    "without_proposed_action": {
+      "status": 200,
+      "agent_names": [
+        "Weather Risk Agent",
+        "Incident Verification Agent",
+        "Guideline Compliance Agent"
+      ],
+      "conflict_count": 0,
+      "guideline_result": "insufficient_evidence",
+      "guideline_page": null,
+      "recommendation": "Escalate for human verification",
+      "abstain": false,
+      "human_review_required": true
+    },
+    "with_proposed_action": {
+      "status": 200,
+      "agent_names": [
+        "Weather Risk Agent",
+        "Incident Verification Agent",
+        "Guideline Compliance Agent"
+      ],
+      "conflict_count": 0,
+      "guideline_result": "supported",
+      "guideline_page": 89,
+      "recommendation": "Escalate for human verification",
+      "abstain": false,
+      "human_review_required": true,
+      "guideline_section": "8.1.3 Evacuation Plan",
+      "guideline_source": "ndma_guidelines_management_of_floods.pdf",
+      "guideline_excerpt_preserved": true
+    },
+    "historical_unknown_availability": {
+      "status": 200,
+      "submitted": 8,
+      "availability_null": 8,
+      "eligible_for_current_support": 0,
+      "recommendation": "Abstain and request human review",
+      "abstain": true,
+      "human_review_required": true
+    }
+  },
+  "dashboard_server": {
+    "url": "http://127.0.0.1:8501",
+    "http_status": 200,
+    "browser_automation_available": false,
+    "validation_method": "Streamlit AppTest widget interactions; screenshot capture unavailable"
+  }
+}

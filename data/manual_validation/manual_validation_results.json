@@ -1,0 +1,414 @@
+{
+  "cases": [
+    {
+      "case_id": "MV-01",
+      "expected_behaviour": "No contradiction; preserve both independent claims and request human verification.",
+      "actual_behaviour": {
+        "recommendation": "Escalate for human verification",
+        "abstain": false,
+        "conflicts": [],
+        "supporting_evidence": [
+          "MV-01-E1",
+          "MV-01-E2"
+        ],
+        "agent_claim_ids": {
+          "weather": [],
+          "incident": [
+            "MV-01-E1",
+            "MV-01-E2"
+          ],
+          "guidelines": [
+            "GUIDELINE-33-d323a0235c09",
+            "GUIDELINE-89-7a5ed6d98f07",
+            "GUIDELINE-33-3a9a6fe6dc19",
+            "GUIDELINE-34-93b2d5e65149",
+            "GUIDELINE-34-f29746606753"
+          ]
+        },
+        "guideline_result": "insufficient_evidence"
+      },
+      "explanation": {
+        "limitations": [
+          "Decision support only; a human responder retains authority.",
+          "Unknown publication availability, ambiguous timezones, stale observations, incomplete evidence, or uncertain geography cannot support a current decision.",
+          "Unverified report-class evidence is not eligible; synthetic evidence is for evaluation only.",
+          "Confidence is not empirically calibrated.",
+          "Guideline applicability was not established; any output is limited to referral for human verification and is not an operational instruction."
+        ],
+        "guideline_explanation": "The retrieved text does not establish that the proposed recommendation applies to the supplied situation."
+      },
+      "evidence_ids": [
+        "MV-01-E1",
+        "MV-01-E2"
+      ],
+      "pass": true
+    },
+    {
+      "case_id": "MV-02",
+      "expected_behaviour": "Detect direct contradiction and abstain.",
+      "actual_behaviour": {
+        "recommendation": "Abstain and request human review",
+        "abstain": true,
+        "conflicts": [
+          {
+            "type": "direct_contradiction",
+            "severity": "high",
+            "evidence_ids": [
+              "MV-02-E1",
+              "MV-02-E2"
+            ]
+          }
+        ],
+        "supporting_evidence": [
+          "MV-02-E1",
+          "MV-02-E2"
+        ],
+        "agent_claim_ids": {
+          "weather": [],
+          "incident": [
+            "MV-02-E1",
+            "MV-02-E2"
+          ],
+          "guidelines": [
+            "GUIDELINE-33-d323a0235c09",
+            "GUIDELINE-60-a84a33c39766",
+            "GUIDELINE-89-7a5ed6d98f07",
+            "GUIDELINE-33-3a9a6fe6dc19",
+            "GUIDELINE-34-93b2d5e65149"
+          ]
+        },
+        "guideline_result": "insufficient_evidence"
+      },
+      "explanation": {
+        "limitations": [
+          "Decision support only; a human responder retains authority.",
+          "Unknown publication availability, ambiguous timezones, stale observations, incomplete evidence, or uncertain geography cannot support a current decision.",
+          "Unverified report-class evidence is not eligible; synthetic evidence is for evaluation only.",
+          "Confidence is not empirically calibrated.",
+          "Guideline applicability was not established; any output is limited to referral for human verification and is not an operational instruction."
+        ],
+        "guideline_explanation": "The retrieved text does not establish that the proposed recommendation applies to the supplied situation."
+      },
+      "evidence_ids": [
+        "MV-02-E1",
+        "MV-02-E2"
+      ],
+      "pass": true
+    },
+    {
+      "case_id": "MV-03",
+      "expected_behaviour": "Flag stale record; exclude it from current support while retaining the recent update.",
+      "actual_behaviour": {
+        "recommendation": "Escalate for human verification",
+        "abstain": false,
+        "conflicts": [
+          {
+            "type": "temporal_staleness",
+            "severity": "medium",
+            "evidence_ids": [
+              "MV-03-E1"
+            ]
+          }
+        ],
+        "supporting_evidence": [
+          "MV-03-E2"
+        ],
+        "agent_claim_ids": {
+          "weather": [],
+          "incident": [
+            "MV-03-E1",
+            "MV-03-E2"
+          ],
+          "guidelines": [
+            "GUIDELINE-33-d323a0235c09",
+            "GUIDELINE-89-7a5ed6d98f07",
+            "GUIDELINE-33-3a9a6fe6dc19",
+            "GUIDELINE-34-93b2d5e65149",
+            "GUIDELINE-34-f29746606753"
+          ]
+        },
+        "guideline_result": "insufficient_evidence"
+      },
+      "explanation": {
+        "limitations": [
+          "Decision support only; a human responder retains authority.",
+          "Unknown publication availability, ambiguous timezones, stale observations, incomplete evidence, or uncertain geography cannot support a current decision.",
+          "Unverified report-class evidence is not eligible; synthetic evidence is for evaluation only.",
+          "Confidence is not empirically calibrated.",
+          "Guideline applicability was not established; any output is limited to referral for human verification and is not an operational instruction."
+        ],
+        "guideline_explanation": "The retrieved text does not establish that the proposed recommendation applies to the supplied situation."
+      },
+      "evidence_ids": [
+        "MV-03-E1",
+        "MV-03-E2"
+      ],
+      "pass": true
+    },
+    {
+      "case_id": "MV-04",
+      "expected_behaviour": "Flag mismatch, do not treat as contradiction, and abstain for location review.",
+      "actual_behaviour": {
+        "recommendation": "Abstain and request human review",
+        "abstain": true,
+        "conflicts": [
+          {
+            "type": "geographic_mismatch",
+            "severity": "info",
+            "evidence_ids": [
+              "MV-04-E1",
+              "MV-04-E2"
+            ]
+          }
+        ],
+        "supporting_evidence": [
+          "MV-04-E1"
+        ],
+        "agent_claim_ids": {
+          "weather": [],
+          "incident": [
+            "MV-04-E1",
+            "MV-04-E2"
+          ],
+          "guidelines": [
+            "GUIDELINE-33-d323a0235c09",
+            "GUIDELINE-60-a84a33c39766",
+            "GUIDELINE-89-7a5ed6d98f07",
+            "GUIDELINE-91-b52244a1b94e",
+            "GUIDELINE-96-c5a9f33d103d"
+          ]
+        },
+        "guideline_result": "insufficient_evidence"
+      },
+      "explanation": {
+        "limitations": [
+          "Decision support only; a human responder retains authority.",
+          "Unknown publication availability, ambiguous timezones, stale observations, incomplete evidence, or uncertain geography cannot support a current decision.",
+          "Unverified report-class evidence is not eligible; synthetic evidence is for evaluation only.",
+          "Confidence is not empirically calibrated.",
+          "Guideline applicability was not established; any output is limited to referral for human verification and is not an operational instruction."
+        ],
+        "guideline_explanation": "The retrieved text does not establish that the proposed recommendation applies to the supplied situation."
+      },
+      "evidence_ids": [
+        "MV-04-E1",
+        "MV-04-E2"
+      ],
+      "pass": true
+    },
+    {
+      "case_id": "MV-05",
+      "expected_behaviour": "Detect incompatible measurements and abstain pending verification.",
+      "actual_behaviour": {
+        "recommendation": "Abstain and request human review",
+        "abstain": true,
+        "conflicts": [
+          {
+            "type": "numerical_measurement",
+            "severity": "high",
+            "evidence_ids": [
+              "MV-05-E1",
+              "MV-05-E2"
+            ]
+          }
+        ],
+        "supporting_evidence": [
+          "MV-05-E1",
+          "MV-05-E2"
+        ],
+        "agent_claim_ids": {
+          "weather": [
+            "MV-05-E1",
+            "MV-05-E2"
+          ],
+          "incident": [],
+          "guidelines": [
+            "GUIDELINE-33-3a9a6fe6dc19",
+            "GUIDELINE-68-63105b431168",
+            "GUIDELINE-69-190be2393fbd",
+            "GUIDELINE-33-d323a0235c09",
+            "GUIDELINE-34-f29746606753"
+          ]
+        },
+        "guideline_result": "insufficient_evidence"
+      },
+      "explanation": {
+        "limitations": [
+          "Decision support only; a human responder retains authority.",
+          "Unknown publication availability, ambiguous timezones, stale observations, incomplete evidence, or uncertain geography cannot support a current decision.",
+          "Unverified report-class evidence is not eligible; synthetic evidence is for evaluation only.",
+          "Confidence is not empirically calibrated.",
+          "Guideline applicability was not established; any output is limited to referral for human verification and is not an operational instruction."
+        ],
+        "guideline_explanation": "The retrieved text does not establish that the proposed recommendation applies to the supplied situation."
+      },
+      "evidence_ids": [
+        "MV-05-E1",
+        "MV-05-E2"
+      ],
+      "pass": true
+    },
+    {
+      "case_id": "MV-06",
+      "expected_behaviour": "Mark evidence insufficient and abstain.",
+      "actual_behaviour": {
+        "recommendation": "Abstain and request human review",
+        "abstain": true,
+        "conflicts": [
+          {
+            "type": "insufficient_evidence",
+            "severity": "medium",
+            "evidence_ids": [
+              "MV-06-E1"
+            ]
+          }
+        ],
+        "supporting_evidence": [],
+        "agent_claim_ids": {
+          "weather": [],
+          "incident": [
+            "MV-06-E1"
+          ],
+          "guidelines": [
+            "GUIDELINE-40-97e99a4c1612",
+            "GUIDELINE-49-894459524bdd",
+            "GUIDELINE-60-a84a33c39766",
+            "GUIDELINE-33-d323a0235c09",
+            "GUIDELINE-34-f37e726bb27e"
+          ]
+        },
+        "guideline_result": "insufficient_evidence"
+      },
+      "explanation": {
+        "limitations": [
+          "Decision support only; a human responder retains authority.",
+          "Unknown publication availability, ambiguous timezones, stale observations, incomplete evidence, or uncertain geography cannot support a current decision.",
+          "Unverified report-class evidence is not eligible; synthetic evidence is for evaluation only.",
+          "Confidence is not empirically calibrated.",
+          "Guideline applicability was not established; any output is limited to referral for human verification and is not an operational instruction."
+        ],
+        "guideline_explanation": "The retrieved text does not establish that the proposed recommendation applies to the supplied situation."
+      },
+      "evidence_ids": [
+        "MV-06-E1"
+      ],
+      "pass": true
+    },
+    {
+      "case_id": "MV-07",
+      "expected_behaviour": "Retrieve relevant provision with source/page/section and classify candidate support, with human review.",
+      "actual_behaviour": {
+        "result": "supported",
+        "citations": [
+          {
+            "source": "ndma_guidelines_management_of_floods.pdf",
+            "physical_pdf_page": 89,
+            "printed_page": null,
+            "section": "8.1.3 Evacuation Plan",
+            "excerpt": "Evacuation of human population and livestock is the only prescribed means to save them from the fury of floods. Evacuation of flood affected communities can be one of the most difficult response operations, especially, when it involves large population. Evacuation needs to be carried out as a precautionary measure based on warning indicators, prior to impact, in order to protect flood-threatened persons from the full effects of the disasters. Evacuation may also be necessary after the area has been flooded in order to move persons from a flood-affected area to safer and better surroundings. For carrying out successful evacuation, the threat perception on the part of DM officials is essential. Continuous dialogue with stakeholders such as, early warning providers, transportation authorities, health-care authorities/ personnel, food and essential commodity suppliers, civil societies, NGOs and last but not the least, the communities including the Decision Support System (DSS) and inputs based on Geographical Information System (GIS) platform are essential for carrying out successful evacuation. Responsibilities of each organisation need to be fixed beforehand in the form of SOPs. Other important points that need to be considered for the development of evacuation plan including the action points, are listed below: i) Designing department-specific customised action plans to save lives immediately following or before an emergency as per the local scale flood risk profile of the region and to respond to any eventuality/emergency ii) Preparing plans of all the organisations involved in the emergency evacuation for all types of emergencies; validating plans; evaluating staff competency; testing the established emergency operational procedures"
+          },
+          {
+            "source": "ndma_guidelines_management_of_floods.pdf",
+            "physical_pdf_page": 47,
+            "printed_page": null,
+            "section": "2.2.2 National Executive Committee",
+            "excerpt": "The National Executive Committee (NEC) comprises the secretary to the GOl in the ministry or department having administrative control of the subject of DM, as the chairperson and the secretaries to the GOl in the ministries/departments of Agriculture, Atomic Energy, Defence, Drinking Water Supply, Environment and Forests, Finance (Expenditure), Health, Power, Rural Development, Science and Technology, Space, Communications, Urban Development, Water Resources and the Chief of the Integrated Defence Staff to Chairman of the Chiefs of Staff Committee as members. It is the executive committee of the NDMA, and is statutorily mandated to assist the Authority in the discharge of its functions and ensure compliance of the directions issued by the central government, apart from preparing the National Plan and securing its approval by the NDMA and performing such other functions as required by the NDMA. Based on the policy and guidelines, the NEC will be responsible for preparing the national plan, getting it approved by the NDMA and then operationalising it. The NEC will also require any department or agency of the government to make available such men or material resources for the purposes of handling threatening disasters, emergency response, rescue and relief, as required by the NDMA. It will coordinate the response in the event of any threatening disaster situation or disaster. It will also perform such other functions as the NDMA may require it to perform."
+          },
+          {
+            "source": "ndma_guidelines_management_of_floods.pdf",
+            "physical_pdf_page": 66,
+            "printed_page": null,
+            "section": "3.8.5 Patient Evacuation Plan",
+            "excerpt": "State governments/SDMAs will make available emergency medical equipment and drugs for resuscitation. Paramedical staff must be trained for resuscitation, triage and to maintain vital parameters like pulse, blood pressure, respiration and intravenous drip during evacuation. Heli- ambulances need to be deployed to aid in the evacuation of flood casualties collected at high points. The ambulances should have Standard Operating Procedures (SOPs) for treatment ."
+          },
+          {
+            "source": "ndma_guidelines_management_of_floods.pdf",
+            "physical_pdf_page": 40,
+            "printed_page": null,
+            "section": "1.15 Past Initiatives of the Government",
+            "excerpt": "of India The Government of India (GOI) has taken a number of initiatives in the field of FM and appointed many committees/working groups/task forces from time to time to look into the problem of floods and suggest remedial measures for their management. It has also issued a number of policy statements in this regard. Some of the important committees/ working groups/task forces appointed and the policy statements made by the GOI are listed as follows: • The Policy Statement – 1954 and Supplementary Statement -1956. • The High Level Committee on Floods – 1957 and Policy Statement of – 1958. • The Ministers’ Committee on Flood Control - 1964. • The Working Groups on Flood Control for the Five-Year Plans. • The Rashtriya Barh Ayog – 1980. • The Pritam Singh Committee Report – 1980. • The National Water Policy -1987. • The Report of the Committee on Flood Management in the North-Eastern States – 1988. • The Report of the Committee on FM in the states of Bihar, West Bengal, Uttar Pradesh and Orissa – 1988. • The Regional Task Forces -1996. • The Experts’ Committee for Bank Erosion Problem of River Ganga-Padma in the Districts of Malda and Murshidabad in West Bengal -1996. • The National Commission for Integrated Water Resources Development Plan -1999. • The Expert Group for Flood Management in Uttar Pradesh and Bihar – 1999. • The Working Group on Flood Control Programme for the Tenth Five-Year Plan – 2001. • Report of the Committee on Silting of Rivers in India – 2002. • National Water Policy – 2002. • The Expert Committee to Review the Implementation of the Recommendations of Rashtriya Barh Ayog – 2003. • The Committee for Identification of critical Anti-Erosion Schemes of Ganga Basin States for Inclusion in centrally sponsored scheme to be implemented during Tenth Plan – 2003. • Report of the Technical Group on Flood and Erosion Problems of North Bengal – July 2004. • The Task Force on Flood Management/ Erosion Control -2004."
+          },
+          {
+            "source": "ndma_guidelines_management_of_floods.pdf",
+            "physical_pdf_page": 46,
+            "printed_page": null,
+            "section": "2.2.1 National Disaster Management Authority",
+            "excerpt": "The Disaster Management Act, 2005 (DM Act,2005) lays down institutional, legal, financial and coordination mechanisms at the national, state, district and local levels. The new institutional framework will ensure operationalisation of the national desire for a paradigm shift in DM from a post event and relief-centric syndrome to a regime that lays greater emphasis on preparedness, prevention and mitigation, leading to a more prompt and effective response to disasters. The NDMA, as the main body under the GOI, has the responsibility of laying down policies, plans and guidelines for DM and coordinating their enforcement and implementation for ensuring a timely and effective response to disasters. It will approve the national DM plan prepared by the National Executive Committee (NEC) and plans of the central ministries and departments. The NDMA may take such other measures, as it may consider necessary, for the prevention of disasters, or mitigation, or preparedness and capacity building, for dealing with a threatening disaster situation or disaster. Its statutory functions include the responsibility to: a) lay down policies on DM; b) approve the national plan and the plans prepared by the central ministries/ departments in accordance with the national plan; c) lay down guidelines to be followed by the state authorities in drawing up the state plans; d) lay down guidelines to be followed by the different central ministries/departments for the purpose of integrating the measures for prevention of disaster or the mitigation of its effects in their development plans and projects;"
+          }
+        ],
+        "matched_candidate_sections": [
+          {
+            "source": "ndma_guidelines_management_of_floods.pdf",
+            "physical_pdf_page": 66,
+            "section": "3.8.5 Patient Evacuation Plan",
+            "overlap_terms": [
+              "evacuation"
+            ],
+            "excerpt": "State governments/SDMAs will make available emergency medical equipment and drugs for resuscitation. Paramedical staff must be trained for resuscitation, triage and to maintain vital parameters like pulse, blood pressure, respiration and intravenous drip during evacuation. Heli- ambulances need to be deployed to aid in the evacuation of flood casualties collected at high points. The ambulances should have Standard Operating Procedures (SOPs) for treatment ."
+          }
+        ]
+      },
+      "explanation": "A candidate provision contains terms related to the recommendation; this is a retrieval-level support signal only and requires human confirmation of conditions and applicability.",
+      "evidence_ids": [
+        "MV-07-E1"
+      ],
+      "pass": true
+    },
+    {
+      "case_id": "MV-08",
+      "expected_behaviour": "Return insufficient evidence and require review without inventing a rule.",
+      "actual_behaviour": {
+        "result": "insufficient_evidence",
+        "citations": [
+          {
+            "source": "ndma_guidelines_management_of_floods.pdf",
+            "physical_pdf_page": 89,
+            "printed_page": null,
+            "section": "8.1.3 Evacuation Plan",
+            "excerpt": "Evacuation of human population and livestock is the only prescribed means to save them from the fury of floods. Evacuation of flood affected communities can be one of the most difficult response operations, especially, when it involves large population. Evacuation needs to be carried out as a precautionary measure based on warning indicators, prior to impact, in order to protect flood-threatened persons from the full effects of the disasters. Evacuation may also be necessary after the area has been flooded in order to move persons from a flood-affected area to safer and better surroundings. For carrying out successful evacuation, the threat perception on the part of DM officials is essential. Continuous dialogue with stakeholders such as, early warning providers, transportation authorities, health-care authorities/ personnel, food and essential commodity suppliers, civil societies, NGOs and last but not the least, the communities including the Decision Support System (DSS) and inputs based on Geographical Information System (GIS) platform are essential for carrying out successful evacuation. Responsibilities of each organisation need to be fixed beforehand in the form of SOPs. Other important points that need to be considered for the development of evacuation plan including the action points, are listed below: i) Designing department-specific customised action plans to save lives immediately following or before an emergency as per the local scale flood risk profile of the region and to respond to any eventuality/emergency ii) Preparing plans of all the organisations involved in the emergency evacuation for all types of emergencies; validating plans; evaluating staff competency; testing the established emergency operational procedures"
+          },
+          {
+            "source": "ndma_guidelines_management_of_floods.pdf",
+            "physical_pdf_page": 41,
+            "printed_page": null,
+            "section": "1.16 Implementation of the Recom­",
+            "excerpt": "mendations of the Experts’ Com­ mittees/Working Groups/Task Forces The implementation of the recommendations of various committees/ working groups/task forces has been rather slow and action on a majority of them has not been taken or at best taken partially due to various administrative, social, financial and political reasons. After the Policy Statement of 1954 and Supplementary Statement of 1956, High Level Committee on Flood Control-1957, Ministers’ Committee on Floods-1964 were the important initiatives taken by the GOI. The GOI set up the RBA in 1976 to study in depth the approach towards programmes of flood control measures, their effectiveness and recommend future measures and the National policy to be followed so as to progressively mitigate the resultant damage from floods. The RBA, looked into the problem of floods in the whole of the country in a most comprehensive manner. It took into account the recommendations of the various past committees and the status of implementation thereof and submitted its report in 1980. The report contained 207 recommendations, implementation of which has been reviewed from time to time. The latest one was by the Experts’ Committee under the Chairmanship of Shri. R. Rangachari former Member, CWC in 2003. It noted that the implementation has been slow and identified 40 recommendations, which need to be followed. These are given in Annex-I/VI. The brief details of the most important ones, which need to be followed, are as follows:- • Flood damage assessment be made on a realistic and scientific basis and recorded basin-/sub-basin-wise. • Performance evaluation of a large number of FM schemes be carried out and their impact on the socio economic development of the protected area be assessed. • The use of flood plains be regulated and a suitable legislation for flood plain zoning be enacted and enforced. • Water Resources planning and construction be basin wise and basin organisations be set up. • Storages in various forms is an important component of the package of measures for FM and flood space in reservoirs be provided to the extent feasible and flood control not relegated to a non- priority activity as against competing water requirements for hydropower and Irrigation purposes. • International dimensions of problem of floods be kept in mind and the GOI should play an important role in the matter. • Requisite funds be made available for construction of new and maintenance of existing works. • Emphasis be laid on research, education and training on FM. The Task Force on Flood Control/Erosion Control considered the status of implementation of recommendations of all the past committees/ working groups/ task forces and submitted its report to the MOWR in December 2004. The MOWR is in the process of taking appropriate action on its various recommendations."
+          },
+          {
+            "source": "ndma_guidelines_management_of_floods.pdf",
+            "physical_pdf_page": 49,
+            "printed_page": null,
+            "section": "2.2.9 Brahmaputra Board/High Powered",
+            "excerpt": "Review Board Floods and erosion in the Brahmaputra and Barak basins are regional problems. Both, the Brahmaputra and the Barak and most of their major tributaries are inter-state as they flow in more than one state. The Brahmaputra Board was set up by the GOI as a statutory body, under the Brahmaputra Board Act, 1980. The Board was to perform such functions and exercise such powers as the central government may specify from time to time by notification in the official Gazette. It has been given the task of carrying out surveys and investigations in the Brahmaputra valley and preparing a Master Plan for control of floods, bank erosion and improvement of drainage, planning and integrated implementation of measures for control of floods and bank erosion in the Brahmaputra and Bark valleys. The Board, with the approval of the central government, is also to take up the construction of multipurpose dams and works connected therewith proposed in the Master Plan and operate such dams and works. The Board consists of four full- time members i.e chairman, vice-chairman, general manager and financial advisor to be appointed by the GOI and part-time members one each to represent respectively the state governments of Assam, Meghalaya, Nagaland, Mizoram, Sikkim, Manipur, Tripura, Arunachal Pradesh and West Bengal and the central ministries dealing with Water Resources, Transport, Agriculture, Power and Finance and the central government departments namely the CWC, the Central Electricity Authority(CEA), the Geological Survey of India(GSI) and the IMD. The Task Force on Flood Management/Erosion control – 2004 has recommended its restructuring/strengthening. The MOWR will take immediate action for restructuring/strengthening of the Brahmaputra Board."
+          },
+          {
+            "source": "ndma_guidelines_management_of_floods.pdf",
+            "physical_pdf_page": 50,
+            "printed_page": null,
+            "section": "2.2.12 National Remote Sensing Agency",
+            "excerpt": "The Department of Space has established a Decision Support Centre (DSC) at National Remote Sensing Agency (NRSA) under the Indian Space Research Organisation’s (ISRO) disaster management support (DMS) programme. DSC is an operational service provider for space-enabled inputs together with other important data layers for its use in disaster management by the central ministries and departments and the state governments in pre- disaster, during disaster and post-disaster phases. A VSAT based satellite communication network has been put in place for online transfer of space- enabled inputs to the concerned state and central government user departments. The DSC has the provision to mobilise aircraft for obtaining aerial data. At present, the DSC is addressing natural disasters viz. floods, cyclone, drought, forest fires, earthquakes and landslides. Besides these, it also provides support services for specific events such as tsunami impact assessment, monitoring of landslide and manmade lakes in the remote areas of India and adjoining areas of other countries. Near real information on the extent of flood inundation derived from space data are made available to the NDMA, MHA, CWC and state agencies for planning relief and rescue operations. The DSC is also working on preparation of maps showing hazard zonation. Flood hazard zone maps for the Brahmaputra river in Assam were prepared. Similar maps are also being prepared for Bihar. The NRSA also prepares maps in river configuration and bank erosion. It also maps flood controls works such as embankments and spurs along selected river reaches and provides this information the concerned departments. The DSC aims at building a comprehensive geo-spatial database of the disaster vulnerable"
+          },
+          {
+            "source": "ndma_guidelines_management_of_floods.pdf",
+            "physical_pdf_page": 53,
+            "printed_page": null,
+            "section": "2.3.9 Intra-state Multi-sectoral Coordination",
+            "excerpt": "While the state irrigation/water resources/flood control departments are responsible for planning, implementation and operation and maintenance of structural measures of FM in the state, civil authorities at the district/taluka/block/village level are responsible for search, rescue and relief. Further, the activities of one department, such as the construction of roads by the PWD, or railway lines by the Ministry of Railways (MOR), urbanisation/ industrialisation regulated by the ULBs and town and country planning organisations etc can affect the vulnerability of an area to floods and drainage congestion. The floods in the Krishna basin in 2005 are a case in point. It is therefore important that a mechanism is established for ensuring coordination among the various departments of state governments. In most of the flood prone states, State Flood Control Advisory Committees have been constituted with representatives of the various departments of the state governments and central organisations concerned, where the FM schemes proposed by the state irrigation/water resources/ flood control departments are considered and approved. There is no multi-disciplinary authority wherein the schemes of other departments for construction of irrigation works, roads, railway lines and development of residential, commercial and industrial estates etc., are considered with respect to their impact on the vulnerability of the areas to floods/drainage congestion and approved for implementation. Therefore, the state governments/SDMAs will establish appropriate multi-disciplinary mechanisms, whose clearance of the proposals of various departments with respect to the FM angle will be mandatory, before the works are sanctioned by them and taken up for implementation by the departments concerned. The mechanisms will be empowered to make recommendations for making the works flood"
+          }
+        ],
+        "matched_candidate_sections": []
+      },
+      "explanation": "The retrieved text does not establish that the proposed recommendation applies to the supplied situation.",
+      "evidence_ids": [
+        "MV-08-E1"
+      ],
+      "pass": true
+    }
+  ],
+  "counts": {
+    "total": 8,
+    "passed": 8,
+    "failed": 0
+  },
+  "note": "All scenarios are explicitly fictional; guide checks use the supplied local NDMA text and do not assert compliance."
+}

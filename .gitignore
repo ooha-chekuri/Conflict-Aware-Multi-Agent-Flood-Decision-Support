@@ -1,0 +1,13 @@
+.venv/
+.python/
+__pycache__/
+.pytest_cache/
+.env
+*.sqlite
+*.sqlite-shm
+*.sqlite-wal
+.uv-cache/
+
+data/raw/
+.git/
+*.log
